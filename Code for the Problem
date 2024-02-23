@@ -1,0 +1,22 @@
+#include <algorithm>
+class Solution{
+    //Function to find the leaders in the array.
+    public:
+    vector<int> leaders(int a[], int n){
+       int maxi=a[n-1];
+       vector<int>result;
+       result.push_back(maxi);
+       for(int i=n-2;i>=0;i--){
+           if(a[i]>=maxi)
+              {
+                  maxi=a[i];
+                  result.push_back(a[i]);
+                  
+              }
+           
+       }
+       reverse(result.begin(), result.end());
+         return result;
+    }
+   
+};
